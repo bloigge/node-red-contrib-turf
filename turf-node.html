@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('turf',{
-        category: 'function',
+        category: 'location',
         color: '#2ecc71',
         defaults: {
             name: {value:""}
@@ -22,7 +22,7 @@
 </script>
 
 <script type="text/x-red" data-help-name="turf">
-<p>A node which exposes all the awesome features of the <a target="_blank" href="http://turfjs.org/">Turf</a> Library for spatial analysis. It includes traditional spatial operations, helper functions for creating GeoJSON data, and data classification and statistics tools. <br>
+<p>A node which exposes all the awesome features of the <a target="_blank" href="http://turfjs.org/">Turf</a> Library for spatial analysis. <br> Turf includes traditional spatial operations, helper functions for creating GeoJSON data, and data classification and statistics tools. <br>
     Turf uses GeoJSON for all geographic data. Turf expects the data to be standard WGS84 longitude, latitude coordinates. Check out <a target="_blank" href="geojson.io">geojson.io</a> for a tool to easily create this data. <br>
     Most Turf functions work with GeoJSON features. These are are pieces of data that represent a collection of properties (ie: population, elevation, zipcode, etc.) along with a geometry. GeoJSON has several geometry types such as:
     <ul>
