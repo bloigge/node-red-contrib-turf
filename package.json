@@ -1,0 +1,22 @@
+{
+  "name": "node-red-contrib-turf",
+  "version": "0.0.1",
+  "description": "",
+  "main": "turf-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "node-red": {
+    "nodes": {
+      "turf": "turf-node.js"
+    }
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "Bernd Loigge",
+  "license": "MIT",
+  "dependencies": {
+    "turf": "^2.0.2"
+  }
+}
