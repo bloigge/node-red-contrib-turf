@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-turf",
   "version": "0.0.1",
-  "description": "",
+  "description": "Node Red integration for TurfJS",
   "main": "turf-node.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,11 +12,16 @@
     }
   },
   "keywords": [
-    "node-red"
+    "node-red",
+    "turf"
   ],
   "author": "Bernd Loigge",
   "license": "MIT",
   "dependencies": {
     "turf": "^2.0.2"
+  },
+ "repository": {
+    "type": "git",
+    "url": "https://github.com/bloigge/node-red-contrib-turf.git"
   }
 }
