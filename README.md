@@ -9,11 +9,11 @@
       <li>Polygon</li>
     </ul>
     <br>
-    The input messeage must contain a <code>msg.topic</code> which sets the turf function (<a target="_blank" href ="http://turfjs.org/static/docs/">Turf Functions</a>).<br>
+    The input messge must contain a <code>msg.topic</code> which sets the turf function (<a target="_blank" href ="http://turfjs.org/static/docs/">Turf Functions</a>).<br>
     The <code>mgs.payload</code> must be an array of input parameters. <br>
     <br>
     Example: <br>
-    <code>msg</code> input for generating 100 random points within a given bounding box (<a target="_blank" href="http://turfjs.org/static/docs/module-turf_random.html">example from the docs</a>):
+    Input-msg for generating 100 random points within a given bounding box (<a target="_blank" href="http://turfjs.org/static/docs/module-turf_random.html">example from the docs</a>):
     <pre>
     msg.topic = "random";
     msg.payload = ['points', 100, {bbox: [-70, 40, -60, 60]}];
