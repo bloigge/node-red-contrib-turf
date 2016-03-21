@@ -14,7 +14,9 @@ module.exports = function(RED) {
                 this.status({});
                 node.send(msg)   
             } catch (err) {
+                this.status({fill:"red",shape:"dot",text:"error"});
                 node.warn(err)
+                this.status({});
             }
         });
     }
