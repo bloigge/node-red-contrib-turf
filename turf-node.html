@@ -3,26 +3,34 @@
         category: 'location',
         color: '#2ecc71',
         defaults: {
+            fn: {value:""},
             name: {value:""}
         },
         inputs:1,
         outputs:1,
         icon: "turf.png",
         label: function() {
-            return this.name||"turf";
-        }
+            return this.name||this.fn||"turf";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        },
     });
 </script>
 
-<script type="text/x-red" data-template-name="turf">
+<script type="text/html" data-template-name="turf">
     <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <label for="node-input-fn"><i class="fa fa-list"></i> Function</label>
+        <input type="text" id="node-input-fn" placeholder="turf function name (optional)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="turf">
-<p>A node which exposes all the awesome features of the <a target="_blank" href="http://turfjs.org/">Turf</a> Library for spatial analysis. <br> <h4>About Turf:</h4>
+<script type="text/html" data-help-name="turf">
+<p>A node which exposes all the awesome features of the <a target="_blank" href="https://turfjs.org/">Turf</a> Library for spatial analysis. <br> <h4>About Turf:</h4>
 Turf includes traditional spatial operations, helper functions for creating GeoJSON data, and data classification and statistics tools. <br>
     Turf uses GeoJSON for all geographic data. Turf expects the data to be standard WGS84 longitude, latitude coordinates. Check out <a target="_blank" href="geojson.io">geojson.io</a> for a tool to easily create this data. <br>
     Most Turf functions work with GeoJSON features. These are are pieces of data that represent a collection of properties (ie: population, elevation, zipcode, etc.) along with a geometry. GeoJSON has several geometry types such as:
@@ -33,15 +41,15 @@ Turf includes traditional spatial operations, helper functions for creating GeoJ
     </ul>
     <br>
     <h4>How to use the node:</h4>
-    The input messge must contain a <code>msg.topic</code> which sets the turf function (<a target="_blank" href ="http://turfjs.org/static/docs/">Turf Functions</a>).<br>
-    The <code>mgs.payload</code> must be an array of input parameters. <br>
+    You may either set the turf function explicitly or pass it in as <code>msg.topic</code> which sets the turf function (<a target="_blank" href ="https://turfjs.org/docs/">Turf Functions</a>).<br>
+    The <code>msg.payload</code> must be an array of input parameters. <br>
     <br>
     Example: <br>
-    Input-msg for generating 100 random points within a given bounding box (<a target="_blank" href="http://turfjs.org/static/docs/module-turf_random.html">example from the docs</a>):
+    Input msg for generating 100 random points within a given bounding box (<a target="_blank" href="https://turfjs.org/docs/#randomPoint">example from the docs</a>):
     <pre>
-    msg.topic = "random";
-    msg.payload = ['points', 100, {bbox: [-70, 40, -60, 60]}];
+    msg.topic = "randomPoint";
+    msg.payload = [100, {bbox: [-5, 55, -3, 49]}];
     </pre>
-    
+
     </p>
 </script>
